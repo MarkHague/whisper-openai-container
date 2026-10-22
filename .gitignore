@@ -16,6 +16,7 @@ sessions/
 .sessions/
 *.session
 .DS_Store
+.vscode
 
 # Python
 .venv/
@@ -26,6 +27,7 @@ __pycache__/
 # Infrastructure state and build output
 infra/cdk/cdk.out/
 infra/cdk/cdk.context.json
+infra/cdk/outputs.json
 infra/terraform/.terraform/
 *.tfstate
 *.tfstate.*

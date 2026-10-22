@@ -102,6 +102,7 @@ update-function: push ## AWS CLI path: push, then point FUNCTION at the new imag
 cdk-deploy: export BUILDX_NO_DEFAULT_ATTESTATIONS = 1
 cdk-deploy: ## CDK path: build, push and deploy everything
 	cd infra/cdk && $(if $(call given,AWS_REGION),AWS_REGION=$(AWS_REGION)) cdk deploy \
+		--outputs-file outputs.json \
 		$(if $(call given,MODEL),-c model=$(MODEL)) $(if $(call given,ARCH),-c architecture=$(ARCH))
 
 # TERRAFORM=tofu for OpenTofu.
